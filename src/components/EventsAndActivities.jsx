@@ -48,7 +48,7 @@ const Reveal = ({ children, delay = 0, direction = 'up', className = '' }) => {
 };
 
 const EventsAndActivities = () => {
-  const [selectedYear, setSelectedYear] = useState('2025');
+  const [selectedYear, setSelectedYear] = useState('2026');
   const [selectedTag, setSelectedTag] = useState('All');
   const [activeEventModal, setActiveEventModal] = useState(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -318,49 +318,6 @@ const EventsAndActivities = () => {
             </div>
           </Reveal>
         )}
-
-        {/* ════════════════════════════════════════════════════════════
-            ANNUAL REPORT CALLOUT BANNER AT THE END (Requested by user)
-        ════════════════════════════════════════════════════════════ */}
-        <Reveal delay={0.3} className="mt-20">
-          <div className="group relative w-full rounded-3xl overflow-hidden bg-gradient-to-br from-sparkBlue via-sparkLightBlue to-sparkBlue p-8 md:p-14 text-white shadow-2xl border border-white/10">
-            {/* Background design accents */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-sparkAccent/15 rounded-full blur-[90px] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-sparkGreen/15 rounded-full blur-[90px] pointer-events-none" />
-
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
-                <div className="w-20 h-20 rounded-3xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
-                  <FileText size={40} className="text-sparkGreen" />
-                </div>
-                <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-sparkAccent text-xs font-bold uppercase tracking-wider mb-3">
-                    Official Document • 2025-2026
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight">
-                    SPARK IUCEE RVCE Annual Report
-                  </h3>
-                  <p className="text-white/70 text-base max-w-2xl leading-relaxed">
-                    Want to dive deeper into our academic year metrics, financial statements, faculty mentorship, research publications, and national awards? Read the comprehensive PDF report.
-                  </p>
-                </div>
-              </div>
-
-              {/* Action Download / Open PDF Button */}
-              <a
-                href={annualReportPdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0 flex items-center gap-3 bg-gradient-to-r from-sparkGreen to-emerald-500 hover:from-sparkAccent hover:to-cyan-400 text-sparkBlue font-black py-4 px-8 rounded-2xl shadow-xl hover:shadow-sparkGreen/30 transition-all duration-300 text-sm md:text-base uppercase tracking-wider group-hover:-translate-y-1"
-              >
-                <Download size={22} className="stroke-[2.5]" />
-                <span>Open Full Report (PDF)</span>
-                <ExternalLink size={18} />
-              </a>
-            </div>
-          </div>
-        </Reveal>
-
       </div>
 
       {/* ════════════════════════════════════════════════════════════
