@@ -11,6 +11,9 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-black text-white">SPARK RVCE</h3>
             <p className="text-sm text-white/70">
+              <span className="font-semibold text-white">2nd floor · New Mechanical Department Building</span>
+            </p>
+            <p className="text-sm text-white/70">
               <span className="font-semibold text-white">RV College of Engineering</span> · Bengaluru, Karnataka · <a href="mailto:spark.iucee@rvce.edu.in" className="text-sparkAccent font-semibold hover:underline">spark.iucee@rvce.edu.in</a>
             </p>
           </div>

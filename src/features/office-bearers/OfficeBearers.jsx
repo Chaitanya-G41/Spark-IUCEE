@@ -151,7 +151,19 @@ const verticalsData = [
         linkedin: 'https://www.linkedin.com/in/dakshraj-shetty-752338370',
       },
     ],
-    members: ['member1', 'member2'],
+    members: [
+      'Swaroop C Kulkarni',
+      'Tarun Aadhithya',
+      'Rohith Raj Reddy',
+      'Yashas R Gowda',
+      'V Sai Amogh Reddy',
+      'Aadithya Varadaraj Seshadri',
+      'Mia Michael',
+      'Neha George',
+      'Owais Sabir',
+      'Ravi R Naidu'
+    ],
+
   },
   {
     title: 'Projects, Research & Development (P, R & D)',
@@ -173,7 +185,20 @@ const verticalsData = [
         linkedin: 'https://www.linkedin.com/in/yashwanth-s-537b6b279',
       },
     ],
-    members: ['member1', 'member2'],
+    members: [
+      'Tharicka Murari',
+      'Ananya Karthik',
+      'Mia Michael',
+      'Neha George',
+      'Shreya Yadawad',
+      'Sriharini Vijaychandar',
+      'Satyendra Nayak K',
+      'Tarun Aadhithya',
+      'Yashas R Gowda',
+      'Chaitanya G',
+      'Rohit Raju Reddy',
+      'Krupanka R'
+    ],
   },
   {
     title: 'Social Media Wing',
