@@ -224,10 +224,8 @@ const verticalsData = [
         role: 'Wing Head',
         dept: 'Civil Engineering',
         email: 'tharunn.cv24@rvce.edu.in',
-        photo: '/images/team/TharunN.jpg',
+        photo: '/images/team/TharunN.png',
         linkedin: 'https://www.linkedin.com/in/tharun-n-977b7633a',
-        imageClass: 'object-cover object-center scale-95',
-        containerClass: 'bg-white',
       },
     ],
     members: [
