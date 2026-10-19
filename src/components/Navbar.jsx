@@ -35,6 +35,8 @@ const Navbar = () => {
   ];
 
   const moreLinks = [
+    { name: 'Achievements', to: '/achievements' },
+    { name: 'Registrations', to: '/registrations' },
     { name: 'Credits', to: '/credits' },
     { name: 'Contact Us', to: '/contact-us' },
   ];

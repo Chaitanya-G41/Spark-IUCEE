@@ -8,6 +8,8 @@ import Wings from './features/wings/Wings';
 import Activities from './features/activities/Activities';
 import Podcasts from './features/podcasts/Podcasts';
 import Projects from './features/projects/Projects';
+import Achievements from './features/achievements/Achievements';
+import Registrations from './features/registrations/Registrations';
 import ContactUs from './features/contact-us/ContactUs';
 import Credits from './features/credits/Credits';
 
@@ -65,6 +67,8 @@ function AppContent() {
             <Route path="/activities" element={<Activities />} />
             <Route path="/podcasts" element={<Podcasts />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/achievements" element={<Achievements />} />
+            <Route path="/registrations" element={<Registrations />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/credits" element={<Credits />} />
           </Routes>
