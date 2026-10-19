@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -30,6 +30,11 @@ const Navbar = () => {
     { name: 'Activities & Events', to: '/activities' },
     { name: 'Podcasts', to: '/podcasts' },
     { name: 'Projects', to: '/projects' },
+  ];
+
+  const moreLinks = [
+    { name: 'Achievements', to: '/achievements' },
+    { name: 'Registrations', to: '/registrations' },
   ];
 
   return (
@@ -93,6 +98,46 @@ const Navbar = () => {
               )}
             </Link>
           ))}
+
+          {/* More dropdown */}
+          <div className="relative group cursor-pointer">
+            <span
+              className={`inline-flex items-center gap-1 text-base font-semibold transition-all duration-200 group-hover:scale-105 ${
+                moreLinks.some((l) => isActive(l.to))
+                  ? 'text-white'
+                  : 'text-white/70 group-hover:text-white'
+              }`}
+            >
+              More{' '}
+              <ChevronDown
+                size={16}
+                className="mt-0.5 transition-transform duration-300 group-hover:rotate-180"
+              />
+            </span>
+
+            {moreLinks.some((l) => isActive(l.to)) && (
+              <motion.div
+                layoutId="navIndicator"
+                className="mt-0.5 h-0.5 rounded-full bg-sparkAccent"
+              />
+            )}
+
+            <div className="absolute right-0 top-full mt-4 w-52 overflow-hidden rounded-2xl border border-white/10 bg-sparkBlue/95 py-2 shadow-xl backdrop-blur-xl opacity-0 invisible transition-all duration-300 translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+              {moreLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.to}
+                  className={`block px-5 py-3 text-sm font-semibold transition-colors hover:bg-white/10 ${
+                    isActive(link.to)
+                      ? 'bg-white/10 text-sparkAccent'
+                      : 'text-white/80 hover:text-white'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </div>
         </nav>
 
         {/* Mobile Toggle */}
@@ -129,6 +174,27 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
+
+              <div className="border-t border-white/10 pt-3">
+                <span className="mb-2 block text-xs font-bold uppercase tracking-wider text-sparkAccent">
+                  More
+                </span>
+                <div className="flex flex-col gap-3 pl-2">
+                  {moreLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      to={link.to}
+                      className={`text-base font-semibold transition-colors ${
+                        isActive(link.to)
+                          ? 'text-sparkAccent'
+                          : 'text-white/70 hover:text-white'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
