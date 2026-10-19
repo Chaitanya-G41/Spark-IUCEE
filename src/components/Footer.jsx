@@ -1,3 +1,5 @@
+import { MapPin, Mail } from 'lucide-react';
+
 const Footer = () => {
   return (
     <footer className="w-full bg-sparkBlue text-white/70 py-8 px-8 md:px-16 xl:px-24 border-t border-white/10">
@@ -8,8 +10,11 @@ const Footer = () => {
           <img src="/spark.png" alt="SPARK Logo" className="w-12 h-12 object-contain shrink-0 drop-shadow-md" />
           <div>
             <h3 className="text-xl font-black text-white">SPARK RVCE</h3>
-            <p className="text-sm text-white/70">
-              <span className="font-semibold text-white">2nd floor · New Mechanical Department Building</span>
+            <p className="flex items-center gap-2 text-sm text-white/70">
+              <MapPin size={14} className="shrink-0 text-sparkGreen" />
+              <span className="font-semibold text-white">
+                ME 201 · 2nd floor · New Mechanical Department Building
+              </span>
             </p>
             <p className="text-sm text-white/70">
               <span className="font-semibold text-white">RV College of Engineering</span> · Bengaluru, Karnataka · <a href="mailto:spark.iucee@rvce.edu.in" className="text-sparkAccent font-semibold hover:underline">spark.iucee@rvce.edu.in</a>

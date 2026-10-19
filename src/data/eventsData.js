@@ -750,7 +750,7 @@ export const eventsByYear = {
           "/events_2026/student-induction-programme-2026/SIP_2.jpg",
           "/events_2026/student-induction-programme-2026/SIP_3.jpg",
           "/events_2026/student-induction-programme-2026/SIP_4.jpg",
-          "/events_2026/student-induction-programme-2026/SIP_5.png"
+          "/events_2026/student-induction-programme-2026/SIP_5.jpg"
         ],
         highlights: [
           "4 interactive sessions, 45 mins each",

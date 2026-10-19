@@ -6,7 +6,7 @@ import {
   ArrowRight, 
   X, 
   FileText, 
-  Download, 
+  Download,
   Sparkles, 
   ChevronLeft, 
   ChevronRight, 
@@ -17,7 +17,7 @@ import {
   Filter,
   ExternalLink
 } from 'lucide-react';
-import { eventsByYear, annualReportPdf } from '../data/eventsData';
+import { eventsByYear, annualReportPdf} from '../data/eventsData';
 
 /* ── Scroll-triggered animation wrapper ── */
 const Reveal = ({ children, delay = 0, direction = 'up', className = '' }) => {
