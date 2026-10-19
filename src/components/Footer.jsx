@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 const Footer = () => {
   return (
     <footer className="w-full bg-sparkBlue text-white/70 py-8 px-8 md:px-16 xl:px-24 border-t border-white/10">
@@ -11,12 +9,15 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-black text-white">SPARK RVCE</h3>
             <p className="text-sm text-white/70">
+              <span className="font-semibold text-white">2nd floor · New Mechanical Department Building</span>
+            </p>
+            <p className="text-sm text-white/70">
               <span className="font-semibold text-white">RV College of Engineering</span> · Bengaluru, Karnataka · <a href="mailto:spark.iucee@rvce.edu.in" className="text-sparkAccent font-semibold hover:underline">spark.iucee@rvce.edu.in</a>
             </p>
           </div>
         </div>
 
-        {/* Right: Contact Us | Credits Box & Social Icons */}
+        {/* Right: Social Icons */}
         <div className="flex flex-col sm:flex-row items-center gap-4">
 
           {/* Social Icons */}
@@ -33,17 +34,6 @@ const Footer = () => {
             <a href="https://www.facebook.com/share/1ESYEfvNC1/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-sparkAccent transition-colors duration-200" aria-label="Facebook">
               <svg className="w-4 h-4 fill-current text-white" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
             </a>
-          </div>
-
-          {/* Prominent Contact Us | Credits Box on Top Right */}
-          <div className="flex items-center gap-3 bg-white/10 hover:bg-white/15 px-5 py-2 rounded-xl border border-white/20 shadow-md transition-all duration-300">
-            <Link to="/contact-us" className="font-bold text-white hover:text-sparkAccent transition-colors text-base tracking-wide">
-              Contact Us
-            </Link>
-            <span className="text-sparkAccent font-bold text-base">|</span>
-            <Link to="/credits" className="font-bold text-white hover:text-sparkAccent transition-colors text-base tracking-wide">
-              Credits
-            </Link>
           </div>
 
         </div>

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -19,6 +20,7 @@ const Navbar = () => {
   // Close mobile menu whenever the route changes
   useEffect(() => {
     setMobileOpen(false);
+    setMoreOpen(false);
   }, [location.pathname]);
 
   const isActive = (path) => location.pathname === path;
@@ -35,6 +37,8 @@ const Navbar = () => {
   const moreLinks = [
     { name: 'Achievements', to: '/achievements' },
     { name: 'Registrations', to: '/registrations' },
+    { name: 'Credits', to: '/credits' },
+    { name: 'Contact Us', to: '/contact-us' },
   ];
 
   return (
@@ -77,7 +81,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -100,105 +104,153 @@ const Navbar = () => {
           ))}
 
           {/* More dropdown */}
-          <div className="relative group cursor-pointer">
-            <span
-              className={`inline-flex items-center gap-1 text-base font-semibold transition-all duration-200 group-hover:scale-105 ${
-                moreLinks.some((l) => isActive(l.to))
+          <div
+            className="relative"
+            onMouseEnter={() => setMoreOpen(true)}
+            onMouseLeave={() => setMoreOpen(false)}
+          >
+            <button
+              type="button"
+              onClick={() => setMoreOpen((prev) => !prev)}
+              aria-expanded={moreOpen}
+              aria-haspopup="true"
+              className={`flex items-center gap-1 text-base font-semibold transition-colors ${
+                moreLinks.some((link) => isActive(link.to))
                   ? 'text-white'
-                  : 'text-white/70 group-hover:text-white'
+                  : 'text-white/70 hover:text-white'
               }`}
             >
-              More{' '}
+              More
               <ChevronDown
                 size={16}
-                className="mt-0.5 transition-transform duration-300 group-hover:rotate-180"
+                className={`transition-transform duration-200 ${
+                  moreOpen ? 'rotate-180' : ''
+                }`}
               />
-            </span>
+            </button>
 
-            {moreLinks.some((l) => isActive(l.to)) && (
-              <motion.div
-                layoutId="navIndicator"
-                className="mt-0.5 h-0.5 rounded-full bg-sparkAccent"
-              />
-            )}
-
-            <div className="absolute right-0 top-full mt-4 w-52 overflow-hidden rounded-2xl border border-white/10 bg-sparkBlue/95 py-2 shadow-xl backdrop-blur-xl opacity-0 invisible transition-all duration-300 translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              {moreLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.to}
-                  className={`block px-5 py-3 text-sm font-semibold transition-colors hover:bg-white/10 ${
-                    isActive(link.to)
-                      ? 'bg-white/10 text-sparkAccent'
-                      : 'text-white/80 hover:text-white'
-                  }`}
+            <AnimatePresence>
+              {moreOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={{ duration: 0.18 }}
+                  className="absolute right-0 top-full z-50 mt-3 w-48 overflow-hidden rounded-xl border border-white/10 bg-sparkBlue/95 py-2 shadow-xl backdrop-blur-xl"
                 >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </nav>
-
-        {/* Mobile Toggle */}
-        <button
-          type="button"
-          className="text-white lg:hidden"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-        >
-          {mobileOpen ? <X size={26} /> : <Menu size={26} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="absolute left-0 top-full mt-3 w-full overflow-hidden rounded-2xl border border-white/10 bg-sparkBlue/95 shadow-xl backdrop-blur-xl lg:hidden"
-          >
-            <div className="flex flex-col gap-5 px-8 py-5">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.to}
-                  className={`text-lg font-semibold transition-colors ${
-                    isActive(link.to)
-                      ? 'text-white'
-                      : 'text-white/70 hover:text-white'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-
-              <div className="border-t border-white/10 pt-3">
-                <span className="mb-2 block text-xs font-bold uppercase tracking-wider text-sparkAccent">
-                  More
-                </span>
-                <div className="flex flex-col gap-3 pl-2">
                   {moreLinks.map((link) => (
                     <Link
                       key={link.name}
                       to={link.to}
-                      className={`text-base font-semibold transition-colors ${
+                      onClick={() => setMoreOpen(false)}
+                      className={`block px-5 py-3 text-sm font-semibold transition-colors ${
                         isActive(link.to)
-                          ? 'text-sparkAccent'
-                          : 'text-white/70 hover:text-white'
+                          ? 'bg-white/10 text-white'
+                          : 'text-white/75 hover:bg-white/10 hover:text-white'
                       }`}
                     >
                       {link.name}
                     </Link>
                   ))}
-                </div>
-              </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </nav>
+
+
+        
+      {/* Mobile Toggle */}
+      <button
+        type="button"
+        className="text-white lg:hidden"
+        onClick={() => setMobileOpen((prev) => !prev)}
+        aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={mobileOpen}
+      >
+        {mobileOpen ? <X size={26} /> : <Menu size={26} />}
+      </button>
+    </div>
+
+    {/* Mobile Menu */}
+    <AnimatePresence>
+      {mobileOpen && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.25 }}
+          className="absolute left-0 top-full mt-3 w-full overflow-hidden rounded-2xl border border-white/10 bg-sparkBlue/95 shadow-xl backdrop-blur-xl lg:hidden"
+        >
+          <div className="flex flex-col gap-5 px-8 py-5">
+
+            {/* Main Navigation Links */}
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.to}
+                className={`text-lg font-semibold transition-colors ${
+                  isActive(link.to)
+                    ? 'text-white'
+                    : 'text-white/70 hover:text-white'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+
+            {/* Mobile More Dropdown */}
+            <div>
+              <button
+                type="button"
+                onClick={() => setMoreOpen((prev) => !prev)}
+                aria-expanded={moreOpen}
+                aria-haspopup="true"
+                className="flex w-full items-center justify-between text-lg font-semibold text-white/70 transition-colors hover:text-white"
+              >
+                More
+
+                <ChevronDown
+                  size={20}
+                  className={`transition-transform duration-200 ${
+                    moreOpen ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+
+              <AnimatePresence>
+                {moreOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="ml-2 mt-3 flex flex-col gap-4 border-l border-white/20 pl-4">
+                      {moreLinks.map((link) => (
+                        <Link
+                          key={link.name}
+                          to={link.to}
+                          className={`text-base font-medium transition-colors ${
+                            isActive(link.to)
+                              ? 'text-white'
+                              : 'text-white/65 hover:text-white'
+                          }`}
+                        >
+                          {link.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
     </motion.header>
   );
 };

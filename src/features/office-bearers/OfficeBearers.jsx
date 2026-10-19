@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Reveal from '../../components/Reveal';
 import Footer from '../../components/Footer';
+import SEOHead from '../../components/SEOHead';
 
 /* ════════════════════════════════════════════════════════════
    OFFICE BEARERS DATA (2024-25)
@@ -150,7 +151,19 @@ const verticalsData = [
         linkedin: 'https://www.linkedin.com/in/dakshraj-shetty-752338370',
       },
     ],
-    members: ['member1', 'member2'],
+    members: [
+      'Swaroop C Kulkarni',
+      'Tarun Aadhithya',
+      'Rohith Raj Reddy',
+      'Yashas R Gowda',
+      'V Sai Amogh Reddy',
+      'Aadithya Varadaraj Seshadri',
+      'Mia Michael',
+      'Neha George',
+      'Owais Sabir',
+      'Ravi R Naidu'
+    ],
+
   },
   {
     title: 'Projects, Research & Development (P, R & D)',
@@ -172,7 +185,20 @@ const verticalsData = [
         linkedin: 'https://www.linkedin.com/in/yashwanth-s-537b6b279',
       },
     ],
-    members: ['member1', 'member2'],
+    members: [
+      'Tharicka Murari',
+      'Ananya Karthik',
+      'Mia Michael',
+      'Neha George',
+      'Shreya Yadawad',
+      'Sriharini Vijaychandar',
+      'Satyendra Nayak K',
+      'Tarun Aadhithya',
+      'Yashas R Gowda',
+      'Chaitanya G',
+      'Rohit Raju Reddy',
+      'Krupanka R'
+    ],
   },
   {
     title: 'Social Media Wing',
@@ -198,10 +224,8 @@ const verticalsData = [
         role: 'Wing Head',
         dept: 'Civil Engineering',
         email: 'tharunn.cv24@rvce.edu.in',
-        photo: '/images/team/TharunN.jpg',
+        photo: '/images/team/TharunN.png',
         linkedin: 'https://www.linkedin.com/in/tharun-n-977b7633a',
-        imageClass: 'object-cover object-center scale-95',
-        containerClass: 'bg-white',
       },
     ],
     members: [
@@ -517,6 +541,11 @@ const OfficeBearers = () => {
 
   return (
     <>
+      <SEOHead
+        title="Office Bearers & Members | SPARK IUCEE RVCE"
+        description="Meet the office bearers, faculty advisors, core team, and wing heads of SPARK IUCEE RVCE at RV College of Engineering, Bengaluru."
+        path="/office-bearers"
+      />
       {/* Hero Banner — Title ONLY */}
       <section className="relative pt-32 pb-16 px-6 text-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #051525 0%, #0B2447 35%, #0d2f5c 60%, #19376D 100%)' }}>
         <div className="absolute inset-0 pointer-events-none">
