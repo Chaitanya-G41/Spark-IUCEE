@@ -38,7 +38,7 @@ const Registrations = () => {
             <h2 className="mt-3 text-3xl font-bold text-navy-900 md:text-4xl">
               Active Registrations
             </h2>
-            <p className="mt-4 text-navy-700 max-w-3xl">
+            <p className="mt-4 text-navy-700 max-w-full">
               Explore open recruitments, event registrations, and workshop sign-ups. Click on a card to view more details and proceed to the registration form.
             </p>
           </div>

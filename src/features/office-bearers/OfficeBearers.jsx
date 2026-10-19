@@ -63,8 +63,9 @@ const coreTeam = [
     role: 'Vice President',
     dept: 'Computer science and Enginnering',
     email: 'assskoundinya.cs24@rvce.edu.in',
-    photo: '/images/team/ASSS_Koundinya.jpg',
+    photo: '/images/team/ASSSKoundinya.jpeg',
     linkedin: 'https://www.linkedin.com/in/a-s-s-s-koundinya-387a6b33a',
+    imageClass: 'object-cover object-[center_15%] scale-100',
   },
   {
     name: 'Parinitha M',
@@ -79,9 +80,9 @@ const coreTeam = [
     role: 'Joint Secretary',
     dept: 'Mechanical Engineering',
     email: 'chinmayidevihn.me24@rvce.edu.in',
-    photo: '/images/team/Chinmayi Devi H N .jpeg',
+    photo: '/images/team/ChinmayiDeviHN.jpeg',
     linkedin: 'https://www.linkedin.com/in/chinmayi-devi-h-n-149802357',
-    imageClass: 'object-cover object-center scale-95',
+    imageClass: 'object-cover object-[center_15%] scale-100',
     containerClass: 'bg-white',
   },
   {
@@ -91,6 +92,7 @@ const coreTeam = [
     email: 'ameyakaa.bt24@rvce.edu.in',
     photo: '/images/team/Ameya Acharya.png',
     linkedin: 'https://www.linkedin.com/in/ameyacharya2006',
+    imageClass: 'object-cover object-[center_50%] scale-150',
   },
 ];
 
@@ -173,7 +175,7 @@ const verticalsData = [
         role: 'Wing Head',
         dept: 'Biotechnology',
         email: 'monishg.bt24@rvce.edu.in',
-        photo: '/images/team/Monish Gangadharan .jpg',
+        photo: '/images/team/MonishGangadharan.png',
         linkedin: 'https://www.linkedin.com/in/monish-gangadharan-64105a335',
       },
       {
