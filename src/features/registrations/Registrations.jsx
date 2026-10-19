@@ -11,8 +11,8 @@ const registrationsData = [
     date: '28th & 30th October',
     title: 'Club Recruitment Drive - Round 1',
     theme: 'Join the Innovation Hub',
-    summary: 'SPARK IUCEE is actively looking for passionate individuals to join our technical, management, and design teams for the 2026-27 session.',
-    description: 'Are you ready to innovate, create, and lead? SPARK IUCEE is opening its doors for the upcoming recruitment drive. We are looking for enthusiastic engineering students to join our various domains including IoT & Embedded Systems, AI/ML, Web Development, and Event Management. By joining SPARK, you get hands-on experience with real-world projects, access to exclusive workshops, and the opportunity to build a strong peer network.',
+    summary: 'Join SPARK IUCEE RVCE! We\'re looking for enthusiastic students passionate about innovation, hands-on learning, and creating an impact through technical projects, leadership, and collaboration.',
+    description: 'Ready to innovate, create, and lead? SPARK IUCEE RVCE is welcoming enthusiastic students to join its diverse team. Gain hands-on experience through practical projects, competitions, workshops, and industrial visits while developing technical and leadership skills. We\'re looking for curious minds eager to learn, collaborate, and turn ideas into impact! \n\n📅 Recruitment Dates: 28th & 30th October 2026 \n⏰ Time: 4:30 PM – 6:30 PM \n📍 Venue: Will be updated soon !',
     formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdRLLWsSw9GfF8XTX8sAZM1OYtry5Xwa9BUtoYnUwl8d9T4Tg/viewform', // Replace this with your actual Google Form or registration link
     instaLink: 'https://www.instagram.com/reel/DerUB6BxI45/?exln=MTc3b2Fyc3M3dGFzcA==',
   },
@@ -39,7 +39,7 @@ const Registrations = () => {
               Active Registrations
             </h2>
             <p className="mt-4 text-navy-700 max-w-full">
-              Explore open recruitments, event registrations, and workshop sign-ups. Click on a card to view more details and proceed to the registration form.
+              Explore open recruitments, events, and opportunities at SPARK IUCEE RVCE. Discover ways to innovate, collaborate, develop new skills, and create an impact!
             </p>
           </div>
 
