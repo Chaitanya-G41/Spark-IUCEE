@@ -12,6 +12,7 @@ import Achievements from './features/achievements/Achievements';
 import Registrations from './features/registrations/Registrations';
 import ContactUs from './features/contact-us/ContactUs';
 import Credits from './features/credits/Credits';
+import RecruitmentPopup from './components/RecruitmentPopup';
 
 import ScrollToTopButton from './components/ScrollToTopButton';
 
@@ -45,6 +46,7 @@ const ScrollToTop = () => {
 
 function AppContent() {
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
 
   useEffect(() => {
     const failsafe = setTimeout(() => {
@@ -73,6 +75,7 @@ function AppContent() {
             <Route path="/credits" element={<Credits />} />
           </Routes>
         </main>
+        {!loading && location.pathname === '/' && <RecruitmentPopup />}
         <ScrollToTopButton />
       </div>
     </div>

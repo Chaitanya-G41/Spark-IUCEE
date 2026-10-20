@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import RecruitmentMarquee from '../../components/RecruitmentMarquee';
 
 /* ───────────────────────────────────────────────
    Typewriter effect
@@ -65,7 +66,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative h-screen min-h-[800px] flex flex-col justify-between overflow-hidden"
+      className="relative min-h-[900px] flex flex-col justify-between overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #051525 0%, #0B2447 35%, #0d2f5c 60%, #19376D 100%)',
       }}
@@ -78,7 +79,7 @@ const Hero = () => {
       </div>
 
       {/* Centre hero text */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center px-6 mt-16">
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-start px-4 pt-32 text-center sm:px-6 sm:pt-36 lg:pt-40">
 
         {/* Badge */}
         <motion.div
@@ -86,12 +87,12 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <span className="inline-block py-1.5 px-5 rounded-full bg-white/8 backdrop-blur-md border border-white/15 text-white/55 font-medium tracking-widest text-xs mb-10 uppercase">
+          <span className="inline-block max-w-full rounded-full border border-white/15 bg-white/8 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-white/55 backdrop-blur-md sm:px-5">
             IUCEE Student Chapter · RV College of Engineering
           </span>
         </motion.div>
 
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <motion.h1
             initial={{ scale: 0.1, opacity: 0 }}
             animate={{ scale: [0.1, 1.35, 0.85, 1], opacity: 1 }}
@@ -103,7 +104,7 @@ const Hero = () => {
             }}
             className="leading-none select-none"
             style={{
-              fontSize: 'clamp(96px, 18vw, 220px)',
+              fontSize: 'clamp(76px, 16vw, 200px)',
               fontFamily: '"Outfit", sans-serif',
               fontWeight: 900,
               letterSpacing: '-0.03em',
@@ -113,6 +114,8 @@ const Hero = () => {
             SPARK
           </motion.h1>
         </div>
+
+        <RecruitmentMarquee />
 
         {/* Typewriter */}
         <motion.div

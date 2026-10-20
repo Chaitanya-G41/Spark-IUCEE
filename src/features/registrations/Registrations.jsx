@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import PageShell from '../../components/PageShell';
+import recruitmentConfig from '../../config/recruitmentConfig';
 
 // You can add more events to this array as they come up
 const registrationsData = [
@@ -13,7 +14,7 @@ const registrationsData = [
     theme: 'Join the Innovation Hub',
     summary: 'Join SPARK IUCEE RVCE! We\'re looking for enthusiastic students passionate about innovation, hands-on learning, and creating an impact through technical projects, leadership, and collaboration.',
     description: 'Ready to innovate, create, and lead? SPARK IUCEE RVCE is welcoming enthusiastic students to join its diverse team. Gain hands-on experience through practical projects, competitions, workshops, and industrial visits while developing technical and leadership skills. We\'re looking for curious minds eager to learn, collaborate, and turn ideas into impact! \n\n📅 Recruitment Dates: 28th & 30th October 2026 \n⏰ Time: 4:30 PM – 6:30 PM \n📍 Venue: Will be updated soon !',
-    formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdRLLWsSw9GfF8XTX8sAZM1OYtry5Xwa9BUtoYnUwl8d9T4Tg/viewform', // Replace this with your actual Google Form or registration link
+    formLink: recruitmentConfig.registrationUrl,
     instaLink: 'https://www.instagram.com/reel/DerUB6BxI45/?exln=MTc3b2Fyc3M3dGFzcA==',
   },
 ];

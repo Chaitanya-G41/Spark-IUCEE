@@ -38,3 +38,175 @@
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* ── Recruitment announcement ── */
+.recruitment-marquee {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px 10px 16px;
+  border: 1px solid rgb(25 167 206 / 35%);
+  border-radius: 18px;
+  background:
+    linear-gradient(110deg, rgb(25 167 206 / 16%), rgb(255 255 255 / 7%) 48%, rgb(11 36 71 / 55%)),
+    rgb(5 21 37 / 68%);
+  box-shadow: 0 14px 36px rgb(0 0 0 / 16%), inset 0 1px rgb(255 255 255 / 10%);
+  backdrop-filter: blur(16px);
+  text-align: left;
+}
+
+.recruitment-marquee-content {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.recruitment-marquee-badge {
+  flex: 0 0 auto;
+  border: 1px solid rgb(25 167 206 / 55%);
+  border-radius: 999px;
+  padding: 7px 10px;
+  background: rgb(25 167 206 / 18%);
+  color: #b8f2ff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.recruitment-marquee-window {
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
+}
+
+.recruitment-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: recruitment-marquee 24s linear infinite;
+}
+
+.recruitment-marquee-copy {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: rgb(255 255 255 / 88%);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.recruitment-marquee-separator {
+  margin: 0 14px;
+  color: #19a7ce;
+  font-size: 14px;
+}
+
+.recruitment-marquee-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.recruitment-marquee-button {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+  white-space: nowrap;
+}
+
+.recruitment-marquee-button:hover {
+  transform: translateY(-1px);
+}
+
+.recruitment-marquee-button:focus-visible {
+  outline: 2px solid #b8f2ff;
+  outline-offset: 2px;
+}
+
+.recruitment-marquee-button-secondary {
+  border: 1px solid rgb(255 255 255 / 24%);
+  color: rgb(255 255 255 / 88%);
+}
+
+.recruitment-marquee-button-secondary:hover {
+  border-color: rgb(25 167 206 / 70%);
+  color: #b8f2ff;
+}
+
+.recruitment-marquee-button-primary {
+  background: #19a7ce;
+  color: #051525;
+  box-shadow: 0 5px 16px rgb(25 167 206 / 25%);
+}
+
+.recruitment-marquee-button-primary:hover {
+  background: #b8f2ff;
+}
+
+.recruitment-marquee-button-disabled {
+  cursor: not-allowed;
+  background: rgb(255 255 255 / 10%);
+  color: rgb(255 255 255 / 45%);
+}
+
+@keyframes recruitment-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 767px) {
+  .recruitment-marquee {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+    padding: 10px;
+  }
+
+  .recruitment-marquee-content {
+    gap: 8px;
+  }
+
+  .recruitment-marquee-badge {
+    padding: 7px 8px;
+    font-size: 9px;
+  }
+
+  .recruitment-marquee-copy {
+    font-size: 11px;
+  }
+
+  .recruitment-marquee-separator {
+    margin: 0 10px;
+  }
+
+  .recruitment-marquee-actions {
+    width: 100%;
+  }
+
+  .recruitment-marquee-button {
+    flex: 1 1 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recruitment-marquee-track {
+    animation-play-state: paused;
+  }
+}
