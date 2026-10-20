@@ -449,7 +449,7 @@ const YearTimeline = ({ years, selected, onChange }) => {
                 id={`tab-${key}`}
                 aria-controls={`panel-${key}`}
                 onClick={() => onChange(key)}
-                className={`relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl font-black text-sm md:text-base transition-all duration-300 shadow-md ${
+                className={`relative flex items-center justify-center min-w-20 w-20 h-14 md:h-16 rounded-2xl font-black text-sm md:text-base whitespace-nowrap transition-all duration-300 shadow-md ${
                   isSelected
                     ? 'bg-sparkBlue text-white ring-4 ring-sparkAccent/30 scale-110 shadow-xl'
                     : isPast
