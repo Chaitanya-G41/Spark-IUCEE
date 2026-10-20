@@ -106,8 +106,9 @@ const verticalsData = [
         role: 'Wing Head',
         dept: 'Information Science and Engineering',
         email: 'manyashrees.is24@rvce.edu.in',
-        photo: '/images/team/Manyashree_S.jpeg',
+        photo: '/images/team/Manyashree_S_New.jpeg',
         linkedin: 'https://www.linkedin.com/in/manyashree-s-828760356',
+        imageClass: 'object-cover object-[center_18%] scale-[1.3]',
       },
       {
         name: 'Vindhya Karanth',
